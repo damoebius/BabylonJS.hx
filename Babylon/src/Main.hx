@@ -1,4 +1,5 @@
 package ;
+import org.tamina.babylon.tools.SceneLoader;
 import org.tamina.babylon.tools.math.Rectangle;
 import org.tamina.babylon.mesh.Mesh;
 import org.tamina.babylon.lights.PointLight;
@@ -24,7 +25,8 @@ class Main {
         var light0 = new PointLight("Omni", new Vector3(0, 0, 10), _scene);
         var origin = Mesh.CreateSphere("origin", 10, 1.0, _scene);
         _scene.activeCamera.attachControl(canvas);
-
+        //SceneLoader.Load('assets/','coussin.babylon',_engine);
+        SceneLoader.ImportMesh('Plane001','assets/','coussin.babylon',_scene);
         _engine.runRenderLoop(update);
 
         trace('end');
